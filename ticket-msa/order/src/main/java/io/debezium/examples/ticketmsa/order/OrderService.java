@@ -34,5 +34,6 @@ public class OrderService {
         order = entityManager.merge(order);
         orderStream.send(KafkaMessage.of(order.getId(), order.toJson().toString()));
         return order;
+        
     }
 }
